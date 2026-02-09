@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover how FRESHBOX Technologies serves diverse industries with innovative IT solutions across Botswana.">
+    <meta name="keywords" content="IT solutions, industries served, agriculture, healthcare, education, retail, tourism, government">
+    <title>Industries - FRESHBOX Technologies | Enterprise Solutions Across Sectors</title>
+    <link rel="icon" href="images/logo2.png" type="image/png">
+    <link rel="apple-touch-icon" href="images/logo2.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo-section">
+                <img src="images/logo2.png" alt="FRESHBOX Technologies" class="nav-logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="industries.html" class="active">Industries</a></li>
+                <li><a href="security.html">Security</a></li>
+                <li><a href="clients.html">Clients</a></li>
+                <li><a href="contact.html" class="cta-btn">Contact</a></li>
+            </ul>
+            <button class="menu-toggle" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Industries Hero Section -->
+        <section class="hero" style="background-image: url('images/industry.jpeg'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed; margin-top: -120px; padding-top: 120px; min-height: 100vh; display: flex; align-items: center; justify-content: center; position: relative;">
+            <div class="hero-overlay" style="background: rgba(0, 0, 0, 0.45);"></div>
+            <div class="container" style="position: relative; z-index: 2; text-align: center; max-width: 950px;">
+                <h1 style="color: white; margin-bottom: 1.5rem; font-size: 4rem; font-weight: 800; line-height: 1.15; letter-spacing: -1px;">Industries We <span style="background: linear-gradient(90deg, #60a5fa, #34d399); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Serve</span></h1>
+                <p style="color: rgba(255,255,255,0.92); font-size: 1.3rem; margin-bottom: 2.5rem; line-height: 1.7; font-weight: 300; max-width: 750px; margin-left: auto; margin-right: auto;">We deliver innovative IT solutions across diverse sectors, with proven expertise in helping organizations transform their operations and drive growth.</p>
+            </div>
+        </section>
+
+        <!-- Industries Section -->
+        <section style="padding: 100px 0; background: white;">
+            <div class="container">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 2.5rem;">
+                    <!-- Agriculture -->
+                    <div style="background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); padding: 2.5rem; border-radius: 1rem; border-left: 4px solid #1e40af; transition: all 0.3s;" onmouseover="this.style.boxShadow='0 20px 40px rgba(0,0,0,0.1)'; this.style.transform='translateY(-5px)'" onmouseout="this.style.boxShadow='none'; this.style.transform='translateY(0)'">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem; color: #1e40af;"><i class="fas fa-leaf"></i></div>
+                        <h3 style="margin-bottom: 1rem; color: #1a202c; font-size: 1.3rem; font-weight: 700;">Agriculture</h3>
+                        <p style="color: #64748b; line-height: 1.6; margin-bottom: 0;">Innovative IT systems for agricultural management, crop optimization, supply chain tracking, and smart farming solutions.</p>
+                    </div>
+
+                    <!-- Retail & Commerce -->
+                    <div style="background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); padding: 2.5rem; border-radius: 1rem; border-left: 4px solid #1e40af; transition: all 0.3s;" onmouseover="this.style.boxShadow='0 20px 40px rgba(0,0,0,0.1)'; this.style.transform='translateY(-5px)'" onmouseout="this.style.boxShadow='none'; this.style.transform='translateY(0)'">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem; color: #1e40af;"><i class="fas fa-shopping-bag"></i></div>
+                        <h3 style="margin-bottom: 1rem; color: #1a202c; font-size: 1.3rem; font-weight: 700;">Retail & Commerce</h3>
+                        <p style="color: #64748b; line-height: 1.6; margin-bottom: 0;">E-commerce platforms, point-of-sale systems, inventory management, and retail analytics solutions.</p>
+                    </div>
+
+                    <!-- Education -->
+                    <div style="background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); padding: 2.5rem; border-radius: 1rem; border-left: 4px solid #1e40af; transition: all 0.3s;" onmouseover="this.style.boxShadow='0 20px 40px rgba(0,0,0,0.1)'; this.style.transform='translateY(-5px)'" onmouseout="this.style.boxShadow='none'; this.style.transform='translateY(0)'">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem; color: #1e40af;"><i class="fas fa-graduation-cap"></i></div>
+                        <h3 style="margin-bottom: 1rem; color: #1a202c; font-size: 1.3rem; font-weight: 700;">Education & Training</h3>
+                        <p style="color: #64748b; line-height: 1.6; margin-bottom: 0;">Learning management systems, student information systems, virtual classrooms, and educational technology solutions.</p>
+                    </div>
+
+                    <!-- Tourism & Wildlife -->
+                    <div style="background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); padding: 2.5rem; border-radius: 1rem; border-left: 4px solid #1e40af; transition: all 0.3s;" onmouseover="this.style.boxShadow='0 20px 40px rgba(0,0,0,0.1)'; this.style.transform='translateY(-5px)'" onmouseout="this.style.boxShadow='none'; this.style.transform='translateY(0)'">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem; color: #1e40af;"><i class="fas fa-tree"></i></div>
+                        <h3 style="margin-bottom: 1rem; color: #1a202c; font-size: 1.3rem; font-weight: 700;">Tourism & Wildlife</h3>
+                        <p style="color: #64748b; line-height: 1.6; margin-bottom: 0;">Conservation technology, wildlife management systems, tourism booking platforms, and resource management solutions.</p>
+                    </div>
+
+                    <!-- Government & Corporate -->
+                    <div style="background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); padding: 2.5rem; border-radius: 1rem; border-left: 4px solid #1e40af; transition: all 0.3s;" onmouseover="this.style.boxShadow='0 20px 40px rgba(0,0,0,0.1)'; this.style.transform='translateY(-5px)'" onmouseout="this.style.boxShadow='none'; this.style.transform='translateY(0)'">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem; color: #1e40af;"><i class="fas fa-building"></i></div>
+                        <h3 style="margin-bottom: 1rem; color: #1a202c; font-size: 1.3rem; font-weight: 700;">Government & Corporate</h3>
+                        <p style="color: #64748b; line-height: 1.6; margin-bottom: 0;">Enterprise solutions, governance systems, compliance management, and mission-critical infrastructure for large organizations.</p>
+                    </div>
+
+                    <!-- Healthcare -->
+                    <div style="background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); padding: 2.5rem; border-radius: 1rem; border-left: 4px solid #1e40af; transition: all 0.3s;" onmouseover="this.style.boxShadow='0 20px 40px rgba(0,0,0,0.1)'; this.style.transform='translateY(-5px)'" onmouseout="this.style.boxShadow='none'; this.style.transform='translateY(0)'">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem; color: #1e40af;"><i class="fas fa-hospital"></i></div>
+                        <h3 style="margin-bottom: 1rem; color: #1a202c; font-size: 1.3rem; font-weight: 700;">Healthcare</h3>
+                        <p style="color: #64748b; line-height: 1.6; margin-bottom: 0;">Medical systems, hospital management, electronic health records, telemedicine, and health IT solutions.</p>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 60px;">
+                    <p style="font-size: 1.1rem; color: #64748b; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">No matter your industry, we have the expertise to deliver winning IT solutions that drive measurable business impact.</p>
+                    <a href="contact.html" style="display: inline-block; font-size: 1rem; padding: 14px 32px; background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); color: white; border-radius: 0.75rem; font-weight: 600; text-decoration: none; transition: all 0.3s; box-shadow: 0 10px 25px rgba(30, 64, 175, 0.2);" onmouseover="this.style.boxShadow='0 15px 35px rgba(30, 64, 175, 0.4)'; this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 10px 25px rgba(30, 64, 175, 0.2)'; this.style.transform='translateY(0)'">Contact Us <i class="fas fa-arrow-right" style="margin-left: 0.5rem;"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section style="padding: 60px 0; background: linear-gradient(135deg, rgba(30, 64, 175, 0.8), rgba(59, 130, 246, 0.8)), url('images/business1.jpg') center/cover; position: relative;">
+            <div class="container" style="text-align: center; position: relative; z-index: 2;">
+                <h2 style="margin-bottom: 1rem; color: white; font-size: 2.5rem;">Ready to Transform Your Business?</h2>
+                <p style="color: rgba(255,255,255,0.95); margin-bottom: 2.5rem; font-size: 1.1rem; max-width: 600px; margin-left: auto; margin-right: auto;">Partner with FRESHBOX Technologies to unlock your organization's digital potential and drive meaningful growth.</p>
+                <a href="contact.html" class="btn-primary" style="background: white; color: #1e40af; padding: 14px 32px; font-weight: 600; display: inline-block; text-decoration: none; border-radius: 0.75rem;">Get Started Today <i class="fas fa-arrow-right" style="margin-left: 0.5rem;"></i></a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer style="background: #0f172a; color: #cbd5e1; padding: 60px 0 20px;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; margin-bottom: 3rem;">
+                <div>
+                    <img src="images/logo2.png" alt="FRESHBOX Technologies" class="footer-logo" style="margin-bottom: 1rem; height: 60px; width: auto; object-fit: contain;">
+                    <p style="margin-bottom: 1.5rem; line-height: 1.7;">Transforming businesses through innovative IT solutions and strategic technology partnerships.</p>
+                    <div style="display: flex; gap: 1rem;">
+                        <a href="#" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 0.5rem; color: white; transition: all 0.3s; text-decoration: none;" onmouseover="this.style.background='rgba(59, 130, 246, 0.5)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 0.5rem; color: white; transition: all 0.3s; text-decoration: none;" onmouseover="this.style.background='rgba(59, 130, 246, 0.5)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'"><i class="fab fa-twitter"></i></a>
+                        <a href="#" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 0.5rem; color: white; transition: all 0.3s; text-decoration: none;" onmouseover="this.style.background='rgba(59, 130, 246, 0.5)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 style="color: white; font-weight: 700; margin-bottom: 1.5rem; font-size: 1rem;">Services</h4>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: 0.75rem;"><a href="services.html" style="color: #cbd5e1; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='#cbd5e1'">Software Development</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="services.html" style="color: #cbd5e1; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='#cbd5e1'">Cloud Solutions</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="services.html" style="color: #cbd5e1; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='#cbd5e1'">Security Solutions</a></li>
+                        <li><a href="services.html" style="color: #cbd5e1; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='#cbd5e1'">Enterprise Systems</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 style="color: white; font-weight: 700; margin-bottom: 1.5rem; font-size: 1rem;">Company</h4>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: 0.75rem;"><a href="about.html" style="color: #cbd5e1; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='#cbd5e1'">About Us</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="industries.html" style="color: #cbd5e1; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='#cbd5e1'">Industries</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="clients.html" style="color: #cbd5e1; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='#cbd5e1'">Clients</a></li>
+                        <li><a href="contact.html" style="color: #cbd5e1; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='#cbd5e1'">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 style="color: white; font-weight: 700; margin-bottom: 1.5rem; font-size: 1rem;">Contact</h4>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: 1rem;"><a href="tel:+26771849875" style="color: #cbd5e1; text-decoration: none; transition: color 0.3s; display: flex; align-items: center; gap: 0.75rem;" onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='#cbd5e1'"><i class="fas fa-phone" style="color: #3b82f6;"></i>+267 71 849 875</a></li>
+                        <li style="margin-bottom: 1rem;"><a href="mailto:info@freshboxtech.co.bw" style="color: #cbd5e1; text-decoration: none; transition: color 0.3s; display: flex; align-items: center; gap: 0.75rem;" onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='#cbd5e1'"><i class="fas fa-envelope" style="color: #3b82f6;"></i>info@freshboxtech.co.bw</a></li>
+                        <li style="display: flex; align-items: center; gap: 0.75rem;"><i class="fas fa-map-marker-alt" style="color: #3b82f6;"></i>Gaborone, Botswana</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; text-align: center;">
+                <p style="color: #94a3b8; margin: 0;">&copy; 2026 FRESHBOX Technologies. All rights reserved. | <a href="#" style="color: #94a3b8; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='#94a3b8'">Privacy</a> | <a href="#" style="color: #94a3b8; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='#94a3b8'">Terms</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
