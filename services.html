@@ -35,8 +35,31 @@
     <main>
         <!-- Hero Section -->
         <section class="hero" style="background-image: url('images/freshbox1.png'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed; margin-top: -120px; padding-top: 120px; min-height: 80vh; display: flex; align-items: center; justify-content: flex-start; position: relative;">
+            <style>
+                .services-hero {
+                    background-attachment: scroll !important;
+                    min-height: 60vh !important;
+                }
+                
+                @media (max-width: 768px) {
+                    .services-hero {
+                        background-attachment: scroll !important;
+                        min-height: 50vh !important;
+                    }
+                }
+                
+                @media (max-width: 576px) {
+                    .services-hero h1 {
+                        font-size: clamp(1.5rem, 7vw, 2.5rem) !important;
+                    }
+                    
+                    .services-hero p {
+                        font-size: clamp(0.9rem, 2.5vw, 1.1rem) !important;
+                    }
+                }
+            </style>
             <div class="hero-overlay" style="background: rgba(0, 0, 0, 0.45);"></div>
-            <div class="container" style="position: relative; z-index: 2; text-align: left; max-width: 850px;">
+            <div class="container services-hero" style="position: relative; z-index: 2; text-align: left; max-width: 850px;">
                 <h1 style="color: white; margin-bottom: 1.5rem; font-size: 3.5rem; font-weight: 800; line-height: 1.15;">Comprehensive Enterprise IT Solutions</h1>
                 <p style="color: rgba(255,255,255,0.92); font-size: 1.2rem; line-height: 1.7; max-width: 600px;">From custom software development to cloud infrastructure, security, and digital transformation - we deliver end-to-end solutions.</p>
             </div>

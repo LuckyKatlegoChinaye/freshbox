@@ -35,8 +35,31 @@
     <main>
         <!-- Hero Section -->
         <section class="hero" style="background-image: url('images/freshbox1.png'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed; margin-top: -120px; padding-top: 120px; min-height: 80vh; display: flex; align-items: center; justify-content: flex-start; position: relative;">
+            <style>
+                .about-hero {
+                    background-attachment: scroll !important;
+                    min-height: 60vh !important;
+                }
+                
+                @media (max-width: 768px) {
+                    .about-hero {
+                        background-attachment: scroll !important;
+                        min-height: 50vh !important;
+                    }
+                }
+                
+                @media (max-width: 576px) {
+                    .about-hero h1 {
+                        font-size: clamp(1.5rem, 7vw, 2.5rem) !important;
+                    }
+                    
+                    .about-hero p {
+                        font-size: clamp(0.9rem, 2.5vw, 1.1rem) !important;
+                    }
+                }
+            </style>
             <div class="hero-overlay" style="background: rgba(0, 0, 0, 0.45);"></div>
-            <div class="container" style="position: relative; z-index: 2; text-align: left; max-width: 850px;">
+            <div class="container about-hero" style="position: relative; z-index: 2; text-align: left; max-width: 850px;">
                 <h1 style="color: white; margin-bottom: 1.5rem; font-size: 3.5rem; font-weight: 800; line-height: 1.15;">Transforming Businesses Since Our Founding</h1>
                 <p style="color: rgba(255,255,255,0.92); font-size: 1.2rem; line-height: 1.7; max-width: 600px;">15+ years of delivering enterprise IT solutions and driving digital transformation across Botswana's most dynamic organizations.</p>
             </div>
@@ -44,16 +67,72 @@
 
         <!-- Company Story -->
         <section style="padding: 100px 0; background: white;">
+            <style>
+                .company-story {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 4rem;
+                    align-items: center;
+                    margin-bottom: 4rem;
+                }
+                
+                @media (max-width: 1024px) {
+                    .company-story {
+                        gap: 2rem;
+                    }
+                }
+                
+                @media (max-width: 768px) {
+                    .company-story {
+                        grid-template-columns: 1fr;
+                        gap: 2rem;
+                        margin-bottom: 2rem;
+                    }
+                    
+                    .company-story h2 {
+                        font-size: clamp(1.3rem, 5vw, 2rem) !important;
+                    }
+                    
+                    .company-story p {
+                        font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+                    }
+                }
+                
+                .story-stats {
+                    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+                    padding: 2rem;
+                    border-radius: 1.5rem;
+                    border-left: 4px solid #1e40af;
+                }
+                
+                @media (max-width: 768px) {
+                    .story-stats {
+                        padding: 1.5rem;
+                    }
+                }
+                
+                .stats-grid {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 1.5rem;
+                }
+                
+                @media (max-width: 576px) {
+                    .stats-grid {
+                        gap: 1rem;
+                    }
+                }
+            </style>
             <div class="container">
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-bottom: 4rem;">
+                <div class="company-story">
                     <div>
                         <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem; color: #1a202c; font-weight: 800;">Our Story</h2>
                         <p style="font-size: 1.05rem; color: #64748b; line-height: 1.8; margin-bottom: 1.5rem;">FRESHBOX Technologies was founded with a clear vision: to be the trusted technology partner that empowers businesses to thrive in the digital age. What started as a small team of passionate technology experts has evolved into a leading systems integrator serving enterprises across multiple sectors.</p>
                         <p style="font-size: 1.05rem; color: #64748b; line-height: 1.8; margin-bottom: 1.5rem;">Our journey has been defined by our unwavering commitment to excellence, innovation, and customer success. We've grown by delivering transformative solutions that solve real business challenges and drive measurable value for our clients.</p>
                         <p style="font-size: 1.05rem; color: #64748b; line-height: 1.8;">Today, FRESHBOX stands as Botswana's premier IT solutions provider, trusted by government agencies, educational institutions, healthcare organizations, financial services firms, and leading commercial enterprises.</p>
                     </div>
-                    <div style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); padding: 2rem; border-radius: 1.5rem; border-left: 4px solid #1e40af;">
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                    <div class="story-stats">
+                        <div class="stats-grid">
                             <div style="text-align: center;">
                                 <div style="font-size: 2.5rem; font-weight: 800; color: #1e40af; margin-bottom: 0.5rem;">15+</div>
                                 <div style="color: #64748b; font-size: 0.95rem;">Years in Business</div>

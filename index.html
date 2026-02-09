@@ -36,32 +36,117 @@
     <main>
         <!-- Hero Section -->
         <section id="home" class="hero" style="background-image: url('images/freshbox1.png'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed; margin-top: -120px; padding-top: 120px; min-height: 100vh; display: flex; align-items: center; justify-content: center; position: relative;">
+            <style>
+                @media (max-width: 768px) {
+                    #home {
+                        background-attachment: scroll !important;
+                        min-height: 60vh !important;
+                        padding-top: 80px !important;
+                        padding-bottom: 2rem !important;
+                    }
+                }
+                
+                #home .hero-badge {
+                    display: inline-block; 
+                    background: rgba(255,255,255,0.15); 
+                    color: #3b82f6; 
+                    padding: 8px 16px; 
+                    border-radius: 50px; 
+                    font-size: 0.85rem; 
+                    font-weight: 600; 
+                    letter-spacing: 1px; 
+                    backdrop-filter: blur(10px); 
+                    border: 1px solid rgba(255,255,255,0.2);
+                    margin-bottom: 1.5rem;
+                }
+                
+                @media (max-width: 576px) {
+                    #home .hero-badge {
+                        font-size: 0.7rem;
+                        padding: 6px 12px;
+                        letter-spacing: 0.5px;
+                    }
+                    
+                    #home h1 {
+                        font-size: clamp(1.5rem, 7vw, 3rem) !important;
+                    }
+                    
+                    #home > .container > p {
+                        font-size: clamp(0.9rem, 2.5vw, 1.2rem) !important;
+                    }
+                }
+                
+                #home .stat-grid {
+                    display: grid; 
+                    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+                    gap: 2rem; 
+                    max-width: 600px; 
+                    margin: 0 auto;
+                }
+                
+                @media (max-width: 768px) {
+                    #home .stat-grid {
+                        grid-template-columns: repeat(2, 1fr);
+                        gap: 1.5rem;
+                    }
+                }
+                
+                @media (max-width: 576px) {
+                    #home .stat-grid {
+                        grid-template-columns: repeat(2, 1fr);
+                        gap: 1rem;
+                    }
+                    
+                    #home .stat-number {
+                        font-size: 1.75rem !important;
+                    }
+                }
+                
+                #home .hero-buttons {
+                    display: flex; 
+                    gap: 1.5rem; 
+                    justify-content: center; 
+                    flex-wrap: wrap;
+                }
+                
+                @media (max-width: 576px) {
+                    #home .hero-buttons {
+                        flex-direction: column;
+                        gap: 1rem;
+                    }
+                    
+                    #home .hero-buttons a {
+                        width: 100%;
+                        padding: 12px 24px !important;
+                    }
+                }
+            </style>
             <div class="hero-overlay" style="background: rgba(0, 0, 0, 0.45);"></div>
             <div class="container" style="position: relative; z-index: 2; text-align: center; max-width: 950px;">
-                <div style="margin-bottom: 1.5rem;">
-                    <span style="display: inline-block; background: rgba(255,255,255,0.15); color: #3b82f6; padding: 8px 16px; border-radius: 50px; font-size: 0.85rem; font-weight: 600; letter-spacing: 1px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2);">ENTERPRISE IT SOLUTIONS</span>
+                <div class="hero-badge">
+                    ENTERPRISE IT SOLUTIONS
                 </div>
                 <h1 style="color: white; margin-bottom: 1.5rem; font-size: 4rem; font-weight: 800; line-height: 1.15; letter-spacing: -1px;">Transform Your Business With <span style="background: linear-gradient(90deg, #60a5fa, #34d399); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Strategic Technology</span></h1>
                 <p style="color: rgba(255,255,255,0.92); font-size: 1.3rem; margin-bottom: 2.5rem; line-height: 1.7; font-weight: 300; max-width: 750px; margin-left: auto; margin-right: auto;">Partner with Botswana's leading IT solutions provider. Enterprise-grade infrastructure, proven expertise, and unwavering commitment to your digital success.</p>
-                <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-bottom: 4rem;">
+                <div class="hero-buttons" style="margin-bottom: 4rem;">
                     <a href="services.html" class="btn-primary" style="font-size: 1.05rem; padding: 16px 36px; border-radius: 0.75rem; font-weight: 600; box-shadow: 0 10px 30px rgba(30, 64, 175, 0.3);">Explore Services</a>
                     <a href="contact.html" style="font-size: 1.05rem; padding: 16px 36px; border-radius: 0.75rem; font-weight: 600; border: 2px solid white; color: white; background: transparent; transition: all 0.3s; display: inline-block; text-decoration: none;">Schedule Consultation</a>
                 </div>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 2rem; max-width: 600px; margin: 0 auto;">
+                <div class="stat-grid">
                     <div>
-                        <div style="font-size: 2.5rem; font-weight: 800; color: #3b82f6; margin-bottom: 0.5rem;">6+</div>
+                        <div style="font-size: 2.5rem; font-weight: 800; color: #3b82f6; margin-bottom: 0.5rem;" class="stat-number">6+</div>
                         <div style="color: rgba(255,255,255,0.8); font-size: 0.95rem;">Industries Served</div>
                     </div>
                     <div>
-                        <div style="font-size: 2.5rem; font-weight: 800; color: #3b82f6; margin-bottom: 0.5rem;">20+</div>
+                        <div style="font-size: 2.5rem; font-weight: 800; color: #3b82f6; margin-bottom: 0.5rem;" class="stat-number">20+</div>
                         <div style="color: rgba(255,255,255,0.8); font-size: 0.95rem;">Enterprise Clients</div>
                     </div>
                     <div>
-                        <div style="font-size: 2.5rem; font-weight: 800; color: #3b82f6; margin-bottom: 0.5rem;">15+</div>
+                        <div style="font-size: 2.5rem; font-weight: 800; color: #3b82f6; margin-bottom: 0.5rem;" class="stat-number">15+</div>
                         <div style="color: rgba(255,255,255,0.8); font-size: 0.95rem;">Years Experience</div>
                     </div>
                     <div>
-                        <div style="font-size: 2.5rem; font-weight: 800; color: #3b82f6; margin-bottom: 0.5rem;">3</div>
+                        <div style="font-size: 2.5rem; font-weight: 800; color: #3b82f6; margin-bottom: 0.5rem;" class="stat-number">3</div>
                         <div style="color: rgba(255,255,255,0.8); font-size: 0.95rem;">Office Locations</div>
                     </div>
                 </div>
@@ -70,45 +155,93 @@
 
         <!-- Capabilities Section -->
         <section style="padding: 100px 0; background: white;">
-            <div class="container">
+            <style>
+                .capabilities-section h2 {
+                    font-size: clamp(1.5rem, 6vw, 2.8rem);
+                }
+                
+                .capabilities-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                    gap: 2.5rem;
+                }
+                
+                @media (max-width: 768px) {
+                    .capabilities-grid {
+                        grid-template-columns: 1fr;
+                        gap: 1.5rem;
+                    }
+                    
+                    .capabilities-section h2 {
+                        font-size: clamp(1.3rem, 5vw, 2rem);
+                    }
+                    
+                    .capability-card {
+                        padding: 1.75rem !important;
+                    }
+                    
+                    .capability-card h3 {
+                        font-size: clamp(1rem, 4vw, 1.3rem) !important;
+                    }
+                    
+                    .capability-card p {
+                        font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+                    }
+                }
+                
+                @media (max-width: 576px) {
+                    .capabilities-grid {
+                        gap: 1rem;
+                    }
+                    
+                    .capability-card {
+                        padding: 1.5rem !important;
+                    }
+                    
+                    .capability-icon {
+                        font-size: 2rem !important;
+                    }
+                }
+            </style>
+            <div class="container capabilities-section">
                 <div style="margin-bottom: 60px;">
                     <h2 style="font-size: 2.8rem; margin-bottom: 1rem; color: #1a202c; font-weight: 800;">Comprehensive IT Solutions</h2>
                     <p style="font-size: 1.1rem; color: #64748b; max-width: 600px;">From strategy to implementation, we deliver end-to-end technology solutions that drive measurable business value.</p>
                 </div>
                 
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem;">
-                    <div style="background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); padding: 2.5rem; border-radius: 1rem; border-left: 4px solid #1e40af; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.boxShadow='0 20px 40px rgba(0,0,0,0.1)'; this.style.transform='translateY(-5px)'" onmouseout="this.style.boxShadow='none'; this.style.transform='translateY(0)'">
-                        <div style="font-size: 2.5rem; margin-bottom: 1rem; color: #1e40af;"><i class="fas fa-code"></i></div>
+                <div class="capabilities-grid">
+                    <div class="capability-card" style="background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); padding: 2.5rem; border-radius: 1rem; border-left: 4px solid #1e40af; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.boxShadow='0 20px 40px rgba(0,0,0,0.1)'; this.style.transform='translateY(-5px)'" onmouseout="this.style.boxShadow='none'; this.style.transform='translateY(0)'">
+                        <div class="capability-icon" style="font-size: 2.5rem; margin-bottom: 1rem; color: #1e40af;"><i class="fas fa-code"></i></div>
                         <h3 style="margin-bottom: 1rem; color: #1a202c; font-size: 1.3rem; font-weight: 700;">Custom Software Development</h3>
                         <p style="color: #64748b; line-height: 1.6;">Tailored applications built with cutting-edge technologies to solve your unique business challenges.</p>
                     </div>
 
-                    <div style="background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); padding: 2.5rem; border-radius: 1rem; border-left: 4px solid #1e40af; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.boxShadow='0 20px 40px rgba(0,0,0,0.1)'; this.style.transform='translateY(-5px)'" onmouseout="this.style.boxShadow='none'; this.style.transform='translateY(0)'">
-                        <div style="font-size: 2.5rem; margin-bottom: 1rem; color: #1e40af;"><i class="fas fa-cloud"></i></div>
+                    <div class="capability-card" style="background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); padding: 2.5rem; border-radius: 1rem; border-left: 4px solid #1e40af; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.boxShadow='0 20px 40px rgba(0,0,0,0.1)'; this.style.transform='translateY(-5px)'" onmouseout="this.style.boxShadow='none'; this.style.transform='translateY(0)'">
+                        <div class="capability-icon" style="font-size: 2.5rem; margin-bottom: 1rem; color: #1e40af;"><i class="fas fa-cloud"></i></div>
                         <h3 style="margin-bottom: 1rem; color: #1a202c; font-size: 1.3rem; font-weight: 700;">Cloud Infrastructure</h3>
                         <p style="color: #64748b; line-height: 1.6;">Scalable, secure cloud solutions designed for enterprise performance and reliability.</p>
                     </div>
 
-                    <div style="background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); padding: 2.5rem; border-radius: 1rem; border-left: 4px solid #1e40af; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.boxShadow='0 20px 40px rgba(0,0,0,0.1)'; this.style.transform='translateY(-5px)'" onmouseout="this.style.boxShadow='none'; this.style.transform='translateY(0)'">
-                        <div style="font-size: 2.5rem; margin-bottom: 1rem; color: #1e40af;"><i class="fas fa-lock"></i></div>
+                    <div class="capability-card" style="background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); padding: 2.5rem; border-radius: 1rem; border-left: 4px solid #1e40af; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.boxShadow='0 20px 40px rgba(0,0,0,0.1)'; this.style.transform='translateY(-5px)'" onmouseout="this.style.boxShadow='none'; this.style.transform='translateY(0)'">
+                        <div class="capability-icon" style="font-size: 2.5rem; margin-bottom: 1rem; color: #1e40af;"><i class="fas fa-lock"></i></div>
                         <h3 style="margin-bottom: 1rem; color: #1a202c; font-size: 1.3rem; font-weight: 700;">Security & Compliance</h3>
                         <p style="color: #64748b; line-height: 1.6;">Comprehensive cybersecurity frameworks protecting your critical assets and data.</p>
                     </div>
 
-                    <div style="background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); padding: 2.5rem; border-radius: 1rem; border-left: 4px solid #1e40af; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.boxShadow='0 20px 40px rgba(0,0,0,0.1)'; this.style.transform='translateY(-5px)'" onmouseout="this.style.boxShadow='none'; this.style.transform='translateY(0)'">
-                        <div style="font-size: 2.5rem; margin-bottom: 1rem; color: #1e40af;"><i class="fas fa-server"></i></div>
+                    <div class="capability-card" style="background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); padding: 2.5rem; border-radius: 1rem; border-left: 4px solid #1e40af; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.boxShadow='0 20px 40px rgba(0,0,0,0.1)'; this.style.transform='translateY(-5px)'" onmouseout="this.style.boxShadow='none'; this.style.transform='translateY(0)'">
+                        <div class="capability-icon" style="font-size: 2.5rem; margin-bottom: 1rem; color: #1e40af;"><i class="fas fa-server"></i></div>
                         <h3 style="margin-bottom: 1rem; color: #1a202c; font-size: 1.3rem; font-weight: 700;">Enterprise Systems</h3>
                         <p style="color: #64748b; line-height: 1.6;">ERP, CRM, and advanced solutions optimized for enterprise operations.</p>
                     </div>
 
-                    <div style="background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); padding: 2.5rem; border-radius: 1rem; border-left: 4px solid #1e40af; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.boxShadow='0 20px 40px rgba(0,0,0,0.1)'; this.style.transform='translateY(-5px)'" onmouseout="this.style.boxShadow='none'; this.style.transform='translateY(0)'">
-                        <div style="font-size: 2.5rem; margin-bottom: 1rem; color: #1e40af;"><i class="fas fa-headset"></i></div>
+                    <div class="capability-card" style="background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); padding: 2.5rem; border-radius: 1rem; border-left: 4px solid #1e40af; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.boxShadow='0 20px 40px rgba(0,0,0,0.1)'; this.style.transform='translateY(-5px)'" onmouseout="this.style.boxShadow='none'; this.style.transform='translateY(0)'">
+                        <div class="capability-icon" style="font-size: 2.5rem; margin-bottom: 1rem; color: #1e40af;"><i class="fas fa-headset"></i></div>
                         <h3 style="margin-bottom: 1rem; color: #1a202c; font-size: 1.3rem; font-weight: 700;">Managed Services</h3>
                         <p style="color: #64748b; line-height: 1.6;">24/7 support and maintenance ensuring optimal system performance and uptime.</p>
                     </div>
 
-                    <div style="background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); padding: 2.5rem; border-radius: 1rem; border-left: 4px solid #1e40af; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.boxShadow='0 20px 40px rgba(0,0,0,0.1)'; this.style.transform='translateY(-5px)'" onmouseout="this.style.boxShadow='none'; this.style.transform='translateY(0)'">
-                        <div style="font-size: 2.5rem; margin-bottom: 1rem; color: #1e40af;"><i class="fas fa-globe"></i></div>
+                    <div class="capability-card" style="background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); padding: 2.5rem; border-radius: 1rem; border-left: 4px solid #1e40af; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.boxShadow='0 20px 40px rgba(0,0,0,0.1)'; this.style.transform='translateY(-5px)'" onmouseout="this.style.boxShadow='none'; this.style.transform='translateY(0)'">
+                        <div class="capability-icon" style="font-size: 2.5rem; margin-bottom: 1rem; color: #1e40af;"><i class="fas fa-globe"></i></div>
                         <h3 style="margin-bottom: 1rem; color: #1a202c; font-size: 1.3rem; font-weight: 700;">Digital Transformation</h3>
                         <p style="color: #64748b; line-height: 1.6;">Strategic guidance to modernize your business and unlock digital potential.</p>
                     </div>

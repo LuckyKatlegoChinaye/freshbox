@@ -1,14 +1,30 @@
-// ============================================
-// FRESHBOX TECHNOLOGIES - JAVASCRIPT
-// ============================================
-
 // Utility function to toggle mobile menu
 function toggleMenu() {
     const navLinks = document.querySelector('.nav-links');
     if (navLinks) {
-        navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        navLinks.classList.toggle('active');
     }
 }
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', function(event) {
+    const nav = document.querySelector('nav');
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (nav && !nav.contains(event.target) && navLinks) {
+        navLinks.classList.remove('active');
+    }
+});
+
+// Close mobile menu when window is resized to desktop width
+window.addEventListener('resize', function() {
+    const navLinks = document.querySelector('.nav-links');
+    if (window.innerWidth > 768 && navLinks) {
+        navLinks.classList.remove('active');
+        navLinks.style.display = 'flex';
+    }
+});
 
 // Set active navigation link based on current page
 function setActiveNavLink() {
@@ -38,13 +54,106 @@ document.addEventListener('DOMContentLoaded', function() {
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
             const menu = document.querySelector('.nav-links');
-            if (menu) {
-                menu.style.display = 'none';
+            if (menu && window.innerWidth <= 768) {
+                menu.classList.remove('active');
             }
             // Update active link after a short delay
             setTimeout(setActiveNavLink, 100);
         });
     });
+});
+
+// Smooth scroll to section
+function scrollToSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
+// Active navigation link on scroll
+window.addEventListener('scroll', function() {
+    const sections = document.querySelectorAll('section[id]');
+    const scrollPosition = window.scrollY + 120;
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        const sectionId = section.getAttribute('id');
+
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.classList.remove('active');
+                const href = link.getAttribute('href');
+                if (href === `#${sectionId}` || href === `${sectionId}.html`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+    });
+});
+
+// Intersection Observer for scroll animations
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.animation = 'fadeInUp 0.8s ease forwards';
+            entry.target.style.opacity = '1';
+            observer.unobserve(entry.target);
+        }
+    });
+}, observerOptions);
+
+// Observe animated elements
+document.addEventListener('DOMContentLoaded', function() {
+    const animatedElements = document.querySelectorAll('.service-card, .industry-item, .stat-card, .card');
+    animatedElements.forEach(el => {
+        el.style.opacity = '0';
+        observer.observe(el);
+    });
+});
+
+// Add fadeInUp animation
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+`;
+document.head.appendChild(style);
+
+// Form submission handling
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            
+            // Here you would typically send the data to your server
+            console.log('Form submitted with data:', Object.fromEntries(formData));
+            
+            // Show success message
+            alert('Thank you for your message! We will get back to you soon.');
+            
+            // Reset form
+            this.reset();
+        });
+    }
 });
 
 // Smooth scroll to section

@@ -36,8 +36,24 @@
     <main>
         <!-- Industries Hero Section -->
         <section class="hero" style="background-image: url('images/industry.jpeg'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed; margin-top: -120px; padding-top: 120px; min-height: 100vh; display: flex; align-items: center; justify-content: center; position: relative;">
+            <style>
+                .industries-hero {
+                    background-attachment: scroll !important;
+                    min-height: 60vh !important;
+                }
+                
+                @media (max-width: 576px) {
+                    .industries-hero h1 {
+                        font-size: clamp(1.5rem, 7vw, 3rem) !important;
+                    }
+                    
+                    .industries-hero p {
+                        font-size: clamp(0.9rem, 2.5vw, 1.2rem) !important;
+                    }
+                }
+            </style>
             <div class="hero-overlay" style="background: rgba(0, 0, 0, 0.45);"></div>
-            <div class="container" style="position: relative; z-index: 2; text-align: center; max-width: 950px;">
+            <div class="container industries-hero" style="position: relative; z-index: 2; text-align: center; max-width: 950px;">
                 <h1 style="color: white; margin-bottom: 1.5rem; font-size: 4rem; font-weight: 800; line-height: 1.15; letter-spacing: -1px;">Industries We <span style="background: linear-gradient(90deg, #60a5fa, #34d399); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Serve</span></h1>
                 <p style="color: rgba(255,255,255,0.92); font-size: 1.3rem; margin-bottom: 2.5rem; line-height: 1.7; font-weight: 300; max-width: 750px; margin-left: auto; margin-right: auto;">We deliver innovative IT solutions across diverse sectors, with proven expertise in helping organizations transform their operations and drive growth.</p>
             </div>
