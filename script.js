@@ -1,159 +1,22 @@
-// Utility function to toggle mobile menu
+// Simple hamburger menu
 function toggleMenu() {
-    const navLinks = document.querySelector('.nav-links');
-    if (navLinks) {
-        navLinks.classList.toggle('active');
+    const menu = document.querySelector('.nav-links');
+    if (menu) {
+        menu.classList.toggle('menu-open');
     }
 }
 
-// Close mobile menu when clicking outside
-document.addEventListener('click', function(event) {
-    const nav = document.querySelector('nav');
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    
-    if (nav && !nav.contains(event.target) && navLinks) {
-        navLinks.classList.remove('active');
-    }
-});
-
-// Close mobile menu when window is resized to desktop width
-window.addEventListener('resize', function() {
-    const navLinks = document.querySelector('.nav-links');
-    if (window.innerWidth > 768 && navLinks) {
-        navLinks.classList.remove('active');
-        navLinks.style.display = 'flex';
-    }
-});
-
-// Set active navigation link based on current page
-function setActiveNavLink() {
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    const navLinks = document.querySelectorAll('.nav-links a');
-    
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        const href = link.getAttribute('href');
-        
-        // Check if link matches current page
-        if ((currentPage === '' || currentPage === '/') && href === '#home') {
-            link.classList.add('active');
-        } else if (href.endsWith(currentPage) || href === currentPage) {
-            link.classList.add('active');
-        } else if (currentPage === 'index.html' && href === '#home') {
-            link.classList.add('active');
-        }
-    });
-}
-
-// Close mobile menu when clicking a link
+// Close menu when a link is clicked
 document.addEventListener('DOMContentLoaded', function() {
-    setActiveNavLink();
-    
-    const navLinks = document.querySelectorAll('.nav-links a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
+    const links = document.querySelectorAll('.nav-links a');
+    links.forEach(link => {
+        link.addEventListener('click', function() {
             const menu = document.querySelector('.nav-links');
-            if (menu && window.innerWidth <= 768) {
-                menu.classList.remove('active');
+            if (menu) {
+                menu.classList.remove('menu-open');
             }
-            // Update active link after a short delay
-            setTimeout(setActiveNavLink, 100);
         });
     });
-});
-
-// Smooth scroll to section
-function scrollToSection(sectionId) {
-    const section = document.getElementById(sectionId);
-    if (section) {
-        section.scrollIntoView({ behavior: 'smooth' });
-    }
-}
-
-// Active navigation link on scroll
-window.addEventListener('scroll', function() {
-    const sections = document.querySelectorAll('section[id]');
-    const scrollPosition = window.scrollY + 120;
-
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        const sectionId = section.getAttribute('id');
-
-        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.classList.remove('active');
-                const href = link.getAttribute('href');
-                if (href === `#${sectionId}` || href === `${sectionId}.html`) {
-                    link.classList.add('active');
-                }
-            });
-        }
-    });
-});
-
-// Intersection Observer for scroll animations
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.animation = 'fadeInUp 0.8s ease forwards';
-            entry.target.style.opacity = '1';
-            observer.unobserve(entry.target);
-        }
-    });
-}, observerOptions);
-
-// Observe animated elements
-document.addEventListener('DOMContentLoaded', function() {
-    const animatedElements = document.querySelectorAll('.service-card, .industry-item, .stat-card, .card');
-    animatedElements.forEach(el => {
-        el.style.opacity = '0';
-        observer.observe(el);
-    });
-});
-
-// Add fadeInUp animation
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-`;
-document.head.appendChild(style);
-
-// Form submission handling
-document.addEventListener('DOMContentLoaded', function() {
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(this);
-            
-            // Here you would typically send the data to your server
-            console.log('Form submitted with data:', Object.fromEntries(formData));
-            
-            // Show success message
-            alert('Thank you for your message! We will get back to you soon.');
-            
-            // Reset form
-            this.reset();
-        });
-    }
 });
 
 // Smooth scroll to section
@@ -297,51 +160,11 @@ if (backToTopBtn) {
     });
 }
 
-// Responsive menu handler
-function handleMenuToggle() {
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    
-    if (menuToggle && navLinks) {
-        menuToggle.addEventListener('click', function(e) {
-            e.stopPropagation();
-            toggleMenu();
-        });
-        
-        // Close menu when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!e.target.closest('nav')) {
-                navLinks.style.display = 'none';
-            }
-        });
-    }
-}
-
-document.addEventListener('DOMContentLoaded', handleMenuToggle);
-
 // Utility function for tracking
 function trackEvent(eventName, eventData) {
     console.log(`Event: ${eventName}`, eventData);
     // Add your analytics code here
 }
-
-// Initialize on page load
-document.addEventListener('DOMContentLoaded', function() {
-    // Track page view
-    trackEvent('page_view', {
-        page: window.location.pathname,
-        timestamp: new Date()
-    });
-
-    // Set current year in footer
-    const year = new Date().getFullYear();
-    const copyrightElements = document.querySelectorAll('footer p');
-    copyrightElements.forEach(el => {
-        if (el.textContent.includes('2026')) {
-            el.textContent = el.textContent.replace('2026', year);
-        }
-    });
-});
 
 // Smooth scroll for anchor links
 document.addEventListener('click', function(e) {
@@ -355,37 +178,6 @@ document.addEventListener('click', function(e) {
             }
         }
     }
-});
-
-// Debounce function for scroll events
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
-}
-
-// Add click handlers to forms
-document.addEventListener('DOMContentLoaded', function() {
-    const forms = document.querySelectorAll('form');
-    forms.forEach(form => {
-        form.addEventListener('submit', function(e) {
-            const submitBtn = form.querySelector('button[type="submit"]');
-            if (submitBtn) {
-                submitBtn.disabled = true;
-                submitBtn.style.opacity = '0.6';
-                setTimeout(() => {
-                    submitBtn.disabled = false;
-                    submitBtn.style.opacity = '1';
-                }, 2000);
-            }
-        });
-    });
 });
 
 // Console message for developers
